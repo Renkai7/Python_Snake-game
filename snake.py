@@ -29,6 +29,13 @@ class Snake:
         self.x_index -= MOVE_DISTANCE
         self.snake_list.append(new_snake)
 
+    def reset(self):
+        for seg in self.snake_list:
+            seg.hideturtle()
+        self.snake_list.clear()
+        self.create_snake()
+        self.head = self.snake_list[0]
+
     def extend(self):
         self.add_segment(self.snake_list[-1].position())
 
